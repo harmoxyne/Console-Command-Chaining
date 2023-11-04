@@ -17,6 +17,17 @@ The project purpose is to show example of how to implement chaining of the conso
   ` attribute to the
   needed command
 
+## Events
+This bundle publishes additional events when working with the chain:
+
+* **BeforeChainExecutionEvent** - event is sent before executing any command from the chain, contains parent command
+* **ChainChildrenDetectedEvent** - event is sent for every children command found. Contains parent command and found children.
+* **BeforeMasterCommandExecutionEvent** - event is sent before parent command gets executed
+* **AfterMasterCommandExecutionEvent** - event is sent after parent command was executed
+* **BeforeChildrenCommandExecutionEvent** - event is sent before specific children command gets executed
+* **AfterChildrenCommandExecutionEvent** - event is sent after specific children command was executed
+* **AfterChainExecutionEvent** - event is sent when chain execution is finished
+
 ## Examples
 
 For demonstration purposes `FooBundle` and `BarBundle` included, exposing commands `foo:hello` and `bar:hi` accordingly.
