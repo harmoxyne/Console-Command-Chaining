@@ -13,10 +13,6 @@ class Kernel extends BaseKernel
 
     public function build(ContainerBuilder $container): void
     {
-        if ($this->getEnvironment() === 'test') {
-//            $container->addCompilerPass(new TestContainerPass());
-        }
-
         $container->addCompilerPass(new CommandChainCompilerPass());
     }
 }
